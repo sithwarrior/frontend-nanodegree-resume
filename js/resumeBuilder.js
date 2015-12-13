@@ -11,7 +11,7 @@ var bio = {
   "welcomeMessage": "Fullstack developer, jack of all trades",
   "skills": ["Sith", "jQuery", "Angular", "C#", "MSSQL"],
   "bioPic": "images/bio.jpg",
-}
+};
 
 bio.display = function() {
   //Setting header/bio infoWindow
@@ -37,79 +37,71 @@ bio.display = function() {
   if (bio.skills.length > 0) {
 
     $("#header").append(HTMLskillsStart);
-    var formattedSkills =  "";
+    var formattedSkills = "";
     for (var i = 0; i < bio.skills.length; i++) {
       formattedSkills += HTMLskills.replace("%data%", bio.skills[i]);
     }
-     $("#skills").append(formattedSkills);
+    $("#skills").append(formattedSkills);
   }
-}
+};
 
 bio.display();
 
 var work = {
-  "jobs" : [
-    {
-      "employer" : "Sport Solution A/S",
-      "title" : "Developer",
-      "dates" : "2010 - Future",
-      "location" : "Århus",
-      "description" : "A great description"
-    },
-    {
-      "employer" : "YouSee",
-      "title" : "Supervisor",
-      "dates" : "2001 - 2010",
-      "location" : "Århus",
-      "description" : "A great description"
-    }
-  ]
+  "jobs": [{
+    "employer": "Sport Solution A/S",
+    "title": "Developer",
+    "dates": "2010 - Future",
+    "location": "Århus",
+    "description": "A great description"
+  }, {
+    "employer": "YouSee",
+    "title": "Supervisor",
+    "dates": "2001 - 2010",
+    "location": "Århus",
+    "description": "A great description"
+  }]
 };
 
 
-work.displayWork = function(){
+work.displayWork = function() {
   for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description)
+    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
     $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle + formattedWorkDates + formattedWorkLocation + formattedWorkDescription);
   }
-}
+};
 
 work.displayWork();
 
 var education = {
-  "schools" : [
-    {
-      "name" : "Handelsskolen i Randers",
-      "location" : "Randers",
-      "degree" : "HHX",
-      "majors" : ["IT"],
-      "dates" : "1997 - 2000",
-      "url" : "http://www.tradium.dk/"
-    }
-  ],
-  "onlineCourses" : [
-    {
-      "title" : "Front-End Web Developer Nanodegree",
-      "school" : "Udacity",
-      "dates" : "2015 - Future",
-      "url" : "https://www.udacity.com"
-    },
-    {
-      "title" : "Akademiuddannelse i IT",
-      "school" : "smartlearning",
-      "dates" : "2011-2014",
-      "url" : "https://www.smartlearning.dk/akademiuddannelser/it#gsc.tab=0"
-    }
-  ]
-}
+  "schools": [{
+    "name": "Handelsskolen i Randers",
+    "location": "Randers",
+    "degree": "HHX",
+    "majors": ["IT"],
+    "dates": "1997 - 2000",
+    "url": "http://www.tradium.dk/"
+  }],
+  "onlineCourses": [{
+    "title": "Front-End Web Developer Nanodegree",
+    "school": "Udacity",
+    "dates": "2015 - Future",
+    "url": "https://www.udacity.com"
+  }, {
+    "title": "Akademiuddannelse i IT",
+    "school": "smartlearning",
+    "dates": "2011-2014",
+    "url": "https://www.smartlearning.dk/akademiuddannelser/it#gsc.tab=0"
+  }]
+};
 
-education.display = function(){
+education.display = function() {
   for (var school in education.schools) {
     //HTMLschoolStart
     $("#education").append(HTMLschoolStart);
@@ -138,29 +130,26 @@ education.display = function(){
     $("#education").append(HTMLschoolStart);
     $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL);
   }
-}
+};
 
 
 education.display();
 
 var projects = {
-  "projects": [
-    {
-      "title" : "IOS/Android Booking App",
-      "dates" : "2013 - Future",
-      "description" : "A booking app for members of various fitness gyms, using Sport Solution.",
-      "images" : ["images/screen568x568.jpeg","images/screen568x568_3.jpeg","images/screen568x568_2.jpeg"]
-    },
-    {
-      "title" : "Responsive webshop",
-      "dates" : "2015 - Future",
-      "description" : "A responsive webshop solution, for selling gym memberships, ticket for events, and various goods.",
-      "images" : ["images/webshop_1.png","images/webshop_2.png"]
-    }
-  ]
-}
+  "projects": [{
+    "title": "IOS/Android Booking App",
+    "dates": "2013 - Future",
+    "description": "A booking app for members of various fitness gyms, using Sport Solution.",
+    "images": ["images/screen568x568.jpeg", "images/screen568x568_3.jpeg", "images/screen568x568_2.jpeg"]
+  }, {
+    "title": "Responsive webshop",
+    "dates": "2015 - Future",
+    "description": "A responsive webshop solution, for selling gym memberships, ticket for events, and various goods.",
+    "images": ["images/webshop_1.png", "images/webshop_2.png"]
+  }]
+};
 
-projects.display = function(){
+projects.display = function() {
   for (var project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
     var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -179,7 +168,7 @@ projects.display = function(){
 projects.display();
 
 $(document).click(function(loc) {
-  logClicks(loc.pageX,loc.pageY);
+  logClicks(loc.pageX, loc.pageY);
 });
 
 //$("#main").append(internationalizeButton);
