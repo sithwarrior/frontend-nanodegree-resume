@@ -132,7 +132,7 @@ education.display = function(){
   for (var onlineCourse in education.onlineCourses) {
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].title);
-    var formattedOnlineDates = replacer(education.onlineCourses[onlineCourse].dates, HTMLonlineDates);
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
 
     $("#education").append(HTMLschoolStart);
@@ -140,11 +140,6 @@ education.display = function(){
   }
 }
 
-function replacer(data, template){
-  console.log(data);
-  console.log(template);
-  return template.replace("%data%", data);
-}
 
 education.display();
 
@@ -199,4 +194,3 @@ $(document).click(function(loc) {
 // };
 
 $("#mapDiv").append(googleMap);
-//$("#education").append(education.name);
