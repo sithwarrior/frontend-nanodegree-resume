@@ -10,7 +10,7 @@ var bio = {
   },
   "welcomeMessage": "Fullstack developer, jack of all trades",
   "skills": ["Sith", "jQuery", "Angular", "C#", "MSSQL"],
-  "bioPic": "images/bio.jpg",
+  "biopic": "images/bio.jpg",
 };
 
 bio.display = function() {
@@ -31,7 +31,7 @@ bio.display = function() {
   $("#footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
   $("#footerContacts").append(HTMLcontactGeneric.replace("%data%", bio.contacts.location).replace("%contact%", "location"));
 
-  $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+  $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
   $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
   if (bio.skills.length > 0) {
@@ -64,7 +64,7 @@ var work = {
 };
 
 
-work.displayWork = function() {
+work.display = function() {
   for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -77,7 +77,7 @@ work.displayWork = function() {
   }
 };
 
-work.displayWork();
+work.display();
 
 var education = {
   "schools": [{
@@ -85,18 +85,18 @@ var education = {
     "location": "Randers",
     "degree": "HHX",
     "majors": ["IT"],
-    "dates": "1997 - 2000",
+    "dates": 2000,
     "url": "http://www.tradium.dk/"
   }],
   "onlineCourses": [{
     "title": "Front-End Web Developer Nanodegree",
     "school": "Udacity",
-    "dates": "2015 - Future",
+    "dates": 2016,
     "url": "https://www.udacity.com"
   }, {
     "title": "Akademiuddannelse i IT",
     "school": "smartlearning",
-    "dates": "2011-2014",
+    "dates": 2014,
     "url": "https://www.smartlearning.dk/akademiuddannelser/it#gsc.tab=0"
   }]
 };
